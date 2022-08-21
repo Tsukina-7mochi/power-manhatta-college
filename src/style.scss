@@ -1,0 +1,69 @@
+@import url('https://use.fontawesome.com/releases/v6.1.1/css/all.css');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  --bg-color: springgreen;
+  --text-color: white;
+  --shadow-color: black;
+
+  display: grid;
+  grid-template-rows: 1fr auto;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  text-shadow: 0.3em 0.3em var(--shadow-color);
+
+  div#text {
+    overflow: hidden;
+
+    textarea {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      box-sizing: border-box;
+      border: 3px solid transparent;
+      font-family: 'Dela Gothic One', cursive;
+      font-size: 8vh;
+      line-height: 1.25;
+      background-color: inherit;
+      color: inherit;
+      text-shadow: inherit;
+      min-height: 1em;
+      outline: none;
+      resize: none;
+      text-align: center;
+
+      &:focus {
+        border-color: var(--text-color);
+      }
+    }
+  }
+
+  div#controls {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2em;
+    padding: 0.2em 0;
+    > * {
+      display: block;
+    }
+
+    button#tweet {
+      font-size: 24px;
+      padding: 5px 20px;
+      background-color: var(--text-color);
+      color: var(--bg-color);
+      text-shadow: 0.1em 0.1em var(--shadow-color);
+      border: none;
+      border-radius: 1em;
+    }
+  }
+}
