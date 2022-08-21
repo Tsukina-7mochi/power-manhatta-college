@@ -50,6 +50,15 @@ const parseQuery = function(query: string): Map<string, string> {
 }
 
 window.addEventListener('load', () => {
+  document.querySelector('#tweet')?.addEventListener('click', () => {
+    const tweetText = window.location.href;
+
+    const link = document.createElement('a');
+    link.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
+
+    link.click();
+  });
+
   const elMain = <HTMLElement | null>document.querySelector('main');
   const elTextarea = <HTMLTextAreaElement | null>document.querySelector('#text textarea');
   const elInputColorBg = <HTMLInputElement | null>document.getElementById('color_bg');
